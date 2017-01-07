@@ -1,0 +1,60 @@
+size: 24
+type: ftyp
+major_brand: 0x71742020
+minor_version: 0x20050300
+
+size: 3763
+type: moov
+        size: 100
+        type: mvhd
+        version: 0x0
+        flags: 0x0
+        creationTime: 0xcc3f17cc
+        modificationTime: 0xcc3f17cd
+        timeSale: 0x258
+        duration: 0xbb8
+        rate: 0x10000
+        volume: 0x100
+        matrix: {0x10000,0x0,0x0,0x0,0x10000,0x0,0x0,0x0,0x40000000}
+        nextTrackId: 0x3
+        
+        size: 1515
+        type: trak
+                size: 84
+                type: tkhd
+                version: 0x0
+                flags: 0xf
+                creationTime: 0xcc3f179f
+                modificationTime: 0xcc3f17cd
+                trackId: 0x1
+                duration: 0xbb8
+                layer: 0x0
+                alternate_group: 0x0
+                volume: 0x0
+                matrix: {0x10000,0x0,0x0,0x0,0x10000,0x0,0x0,0x0,0x40000000}
+                width: 0x2d00000
+                height: 0x2400000
+                
+        size: 1020
+        type: trak
+                size: 84
+                type: tkhd
+                version: 0x0
+                flags: 0xf
+                creationTime: 0xcc3f179f
+                modificationTime: 0xcc3f17cd
+                trackId: 0x2
+                duration: 0xbb8
+                layer: 0x0
+                alternate_group: 0x0
+                volume: 0x0
+                matrix: {0x10000,0x0,0x0,0x0,0x10000,0x0,0x0,0x0,0x40000000}
+                width: 0x0
+                height: 0x0
+                
+        size: 8
+        type: free
+        
+        size: 39454480
+        type: mdat
+        

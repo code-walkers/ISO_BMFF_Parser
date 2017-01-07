@@ -1,0 +1,57 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww28520\viewh16580\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs20 \cf0 \CocoaLigature0 \
+\
+Delivery contains:\
+1. Windows 32 executable named : BMFFParser.exe\
+2. Visual Studio 2015 project directory with source code : BaseApp\
+3. Output.txt\
+\
+Instructions to run:\
+1. Run BMFFParser.exe\
+2. Use the UI to open the test input file. \
+3. Output.txt will be generated in application\'92s working directory.\
+\
+Libraries used, platform details:\
+1. I used some components of WxWidgets (an open source cross-platform widgets library). I have a macbook for personal use & never used WxWidgets on Mac. So, I used Visual Studio 2015 to develop the parsing application.\
+2. WxWidgets library was built and linked statically so that there is no dependency on DLLs when you run on another Windows machine. \
+3. Please note that though the current application has UI, turning OFF the UI component to make it executable through command line is a trivial change. \
+   This should not affect automation capabilities.\
+\
+\
+1. Parse \'93ProRes_option9.mov\'94 according to spec ISO/IEC 14496-12_2012.\
+2. Provide a minimally formatted output from parser showing the box hierarchy and relevant details.\
+3. Provide an implementation of IMF stream, which can be used to plugin an HTTP reader or a FileReader alike. \
+   \
+\
+Assumptions/Limitations/Todo:\
+1. Windows implementation.\
+2. Box sizes are 32-bit (standard allows for 64-bit file sizes).\
+3. Parser was written to read stream data in variable chunk sizes. Ideally an HTTP stream will be read as larger chunks & the HTTP stream should be handled in a worker thread.\
+   For simplicity of implementation, the application is created to be single threaded and reads variable (small/big) chunks of data as it parses the stream. Hence will block.\
+4. Boxes not mentioned in the question have been skipped.\
+5. Simple formatting of output is done. My original plan was to show formatted output (as a collapsible tree or formatted text) on the UI.\
+   It would take longer to do this.\
+6. I wanted to implement a serializer/de-serializer to store/read the formatted output. In hindsight, Box details could be better populated as a key,value map.\
+   It would take longer too.\
+7. No external config file has been provided. Hence no way to specify a URL currently. \
+8. Only a place holder for HTTP reader is provided. Implementation will not work.\
+9. Explicit release of memory in code could have been avoided in a JAVA or C++ 11 implementation. I could not find a place to configure usage of C++11 on Visual Studio.\
+\
+\
+\
+Tests performed:\
+1. Used \'93ProRes_option9.mov\'94 reference input to validate the correctness of value of few of fields extracted and verified using a hex editor.\
+2. For initial verification of the implementation, I also used http://download.tsi.telecom-paristech.fr/gpac/mp4box.js/filereader.html\
+   Some of the values extracted by BMFFParser.exe do not seem to match the output from above tool.\
+3. Tested the executable on another Windows 7 64-bit machine & found to run without any other dependencies.\
+4. Does not crash with invalid format input. Provides a meaningful error.\
+\
+\
+\
+\
+}
