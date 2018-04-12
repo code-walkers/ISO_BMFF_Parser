@@ -33,10 +33,7 @@ Assumptions/Limitations/Todo:\
 2. Box sizes are 32-bit (standard allows for 64-bit file sizes).\
 3. Parser was written to read stream data in variable chunk sizes. Ideally an HTTP stream will be read as larger chunks & the HTTP stream should be handled in a worker thread.\
    For simplicity of implementation, the application is created to be single threaded and reads variable (small/big) chunks of data as it parses the stream. Hence will block.\
-5. Simple formatting of output is done. My original plan was to show formatted output (as a collapsible tree or formatted text) on the UI.\
-   It would take longer to do this.\
 6. I wanted to implement a serializer/de-serializer to store/read the formatted output. In hindsight, Box details could be better populated as a key,value map.\
-   It would take longer too.\
 7. No external config file has been provided. Hence no way to specify a URL currently. \
 8. Only a place holder for HTTP reader is provided. Implementation will not work.\
 9. Explicit release of memory in code could have been avoided in a JAVA or C++ 11 implementation. I could not find a place to configure usage of C++11 on Visual Studio.\
