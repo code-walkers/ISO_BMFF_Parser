@@ -33,7 +33,6 @@ Assumptions/Limitations/Todo:\
 2. Box sizes are 32-bit (standard allows for 64-bit file sizes).\
 3. Parser was written to read stream data in variable chunk sizes. Ideally an HTTP stream will be read as larger chunks & the HTTP stream should be handled in a worker thread.\
    For simplicity of implementation, the application is created to be single threaded and reads variable (small/big) chunks of data as it parses the stream. Hence will block.\
-4. Boxes not mentioned in the question have been skipped.\
 5. Simple formatting of output is done. My original plan was to show formatted output (as a collapsible tree or formatted text) on the UI.\
    It would take longer to do this.\
 6. I wanted to implement a serializer/de-serializer to store/read the formatted output. In hindsight, Box details could be better populated as a key,value map.\
